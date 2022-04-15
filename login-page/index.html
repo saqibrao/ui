@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../reset.css" />
+  <link rel="stylesheet" href="./styles.css" />
+  <title>Login Page</title>
+</head>
+
+<body>
+  <main class="main">
+    <div class="logo">
+      <img src="./img/logo.svg" alt="Schoolvoice logo" />
+    </div>
+    <div class="background">
+      <div class="login-top"></div>
+      <div class="login-bottom"></div>
+    </div>
+    <div class="forms-container">
+      <div class="forms-title">Login</div>
+      <div class="fields-wrapper">
+        <form class="login-form">
+          <div class="input-row">
+            <label for="username" class="label">Username/E-mail</label>
+            <input type="text" id="username" placeholder="Username/Email" required />
+          </div>
+          <div class="input-row password-row">
+            <label for="password" class="label">Password</label>
+            <input class="password-input" type="password" id="password" autocomplete="current-password" required />
+            <img class="toggle-password-icons" id="show-password-icon" src="./img/eye-fill.svg" alt="show password" />
+            <img class="toggle-password-icons" id="hide-password-icon" src="./img/eye-slash-fill.svg"
+              alt="hide password" hidden />
+          </div>
+          <div class="input-row">
+            <input class="login-button" type="submit" value="Login" />
+          </div>
+          <div class="post-login-row">
+            <div class="remember-me">
+              <input type="checkbox" id="remember-me-checkbox" />
+              <label for="remember-me-checkbox">Remember me</label>
+            </div>
+            <div class="forgot-password">
+              <img src="./img/lock.svg" alt="lock icon" />
+              <a href="#" alt="did you forgot the password">Forgot password?</a>
+            </div>
+          </div>
+        </form>
+        <div class="sign-up">
+          <label class="register-label" for="register">Don't you have an account?</label>
+          <input class="registration-button" type="button" value="School Registration" id="register" />
+        </div>
+      </div>
+    </div>
+  </main>
+  <script>
+    const passwordField = document.getElementById("password");
+    const showPasswordIcon = document.getElementById("show-password-icon");
+    const hidePasswordIcon = document.getElementById("hide-password-icon");
+
+    showPasswordIcon.onclick = () => {
+      showPasswordIcon.style.display = "none";
+      hidePasswordIcon.style.display = "block";
+      passwordField.type = "text";
+    };
+    hidePasswordIcon.onclick = () => {
+      showPasswordIcon.style.display = "block";
+      hidePasswordIcon.style.display = "none";
+      passwordField.type = "password";
+    };
+  </script>
+</body>
+
+</html>
